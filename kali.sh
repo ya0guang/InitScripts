@@ -3,10 +3,8 @@
 # Environment
 # Update System
 sudo apt update && apt upgrade
-
-# Oh My Zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# may change theme:
+sudo apt install curl -y
+sudo curl https://raw.githubusercontent.com/ya0guang/InitScripts/master/apt_common.sh | bash
 
 # Docker
 sudo apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common

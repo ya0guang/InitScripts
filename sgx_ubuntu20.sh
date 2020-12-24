@@ -40,6 +40,7 @@ cd linux/installer/bin
 
 sudo ./sgx_linux_x64_sdk_2.12.100.3.bin 
 
+cd ../..
 # no
 # /opt/intel
 
@@ -52,10 +53,14 @@ make psw DEBUG=1
 cd psw/ae/le
 make
 
+cd ../../..
+
 make deb_psw_pkg DEBUG=1
 
 make deb_local_repo
 
+# Please change the path of home accordingly
+# This may not work in docker because the local deb repo may not be /root
 echo "deb [trusted=yes arch=amd64] file:/home/ya0guang/linux-sgx/linux/installer/deb/sgx_debian_local_repo focal main" >> /etc/apt/sources.list
 
 sudo apt update

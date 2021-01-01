@@ -72,3 +72,29 @@ sudo apt-get install libsgx-epid libsgx-urts
 # sudo apt-get install libsgx-launch libsgx-urts
 # sudo apt-get install libsgx-quote-ex libsgx-urts
 # sudo apt-get install libsgx-dcap-ql
+
+# Graphene-SGX: https://graphene.readthedocs.io/en/latest/building.html
+
+# Install the Linux kernel patched with FSGSBASE
+# or
+# Install the Graphene FSGSBASE driver
+
+# 1. Clone the repository and set the home directory of Graphene:
+
+git clone https://github.com/oscarlab/graphene.git
+cd graphene
+export GRAPHENE_DIR=$PWD
+
+# 2 Prepare a signing key:
+
+cd $GRAPHENE_DIR/Pal/src/host/Linux-SGX/signer
+openssl genrsa -3 -out enclave-key.pem 3072
+
+# 3 Dep and build
+# may add env var
+export ISGX_DRIVER_PATH=/root/linux-sgx-driver/
+ sudo apt-get install -y \
+   build-essential autoconf gawk bison libcurl4-openssl-dev \
+   python3-protobuf libprotobuf-c-dev protobuf-c-compiler
+cd $GRAPHENE_DIR
+make SGX=1

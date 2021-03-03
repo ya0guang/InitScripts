@@ -98,3 +98,5 @@ export ISGX_DRIVER_PATH=/root/linux-sgx-driver/
    python3-protobuf libprotobuf-c-dev protobuf-c-compiler
 cd $GRAPHENE_DIR
 make SGX=1
+# or we can use the following line...
+# ISGX_DRIVER_PATH=/root/linux-sgx-driver/ make SGX=1

@@ -38,7 +38,7 @@ sudo apt-get install build-essential python -y
 
 cd linux/installer/bin
 
-sudo ./sgx_linux_x64_sdk_2.12.100.3.bin 
+sudo ./sgx_linux_x64_sdk_2.*.bin 
 
 cd ../..
 # no

@@ -57,7 +57,7 @@ cd ../../..
 make deb_psw_pkg DEBUG=1
 
 make deb_local_repo
-
+cd ..
 # Please change the path of home accordingly
 # This may not work in docker because the local deb repo may not be /root
 sudo sh -c 'echo "deb [trusted=yes arch=amd64] file:/home/ya0guang/linux-sgx/linux/installer/deb/sgx_debian_local_repo focal main" >> /etc/apt/sources.list'

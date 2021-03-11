@@ -12,7 +12,7 @@ sudo cp isgx.ko "/lib/modules/"`uname -r`"/kernel/drivers/intel/sgx"
 sudo sh -c "cat /etc/modules | grep -Fxq isgx || echo isgx >> /etc/modules" 
 sudo /sbin/depmod
 sudo /sbin/modprobe isgx
-
+cd ..
 # Verify installation
 lsmod | grep sgx
 
@@ -40,10 +40,9 @@ cd linux/installer/bin
 
 sudo ./sgx_linux_x64_sdk_2.*.bin 
 
-cd ../..
 # no
 # /opt/intel
-
+cd ../../..
 source /opt/intel/sgxsdk/environment
 
 # PSW

@@ -80,6 +80,8 @@ sudo apt-get install libsgx-epid libsgx-urts
 
 # 1. Clone the repository and set the home directory of Graphene:
 
+pip3 install toml
+
 git clone https://github.com/oscarlab/graphene.git
 cd graphene
 export GRAPHENE_DIR=$PWD

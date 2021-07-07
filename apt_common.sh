@@ -1,7 +1,19 @@
 # Environment
+
+# In case inside a container
+apt update && apt install sudo
+
 # Update System
 sudo apt update && apt upgrade
-sudo apt install vim curl wget zsh git fonts-powerline -y
+
+# EDC
+sudo apt install -y vim curl wget zsh git fonts-powerline
+
+# Python3
+sudo apt install -y python3 python3-dev python3-setuptools
+
+# Compiliation toolchain
+sudo apt install -y clang-10 llvm-10 build-essential cmake gcc
 
 # Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -12,6 +24,3 @@ sed -i 's#ZSH_THEME="robbyrussell"#ZSH_THEME="powerlevel10k/powerlevel10k"#g' ./
 
 # VScode
 sudo snap install --classic code
-
-# Python Dev Env
-sudo apt install python3-pip -y
